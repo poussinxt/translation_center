@@ -89,7 +89,7 @@ module TranslationCenter
     end
 
     # Make sure we've loaded the translations
-    I18n.backend.backends[1].send(:load_translations, 'config/locales/en.yml', , 'config/locales/fr.yml')
+    I18n.backend.backends[1].send(:load_translations, 'config/locales/en.yml','config/locales/fr.yml')
     puts "#{I18n.available_locales.size} #{I18n.available_locales.size == 1 ? 'locale' : 'locales'} available: #{I18n.available_locales.join(', ')}"
 
     # Get all keys from all locales
