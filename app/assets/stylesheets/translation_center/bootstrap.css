@@ -220,11 +220,12 @@ a:hover {
   min-height: 1px;
   margin-left: 20px;
 }
-
-.container,
-.navbar-static-top .container,
-.navbar-fixed-top .container,
-.navbar-fixed-bottom .container {
+.navbar-inner .container{
+  width: auto;
+  background-color:#008CBA;
+}
+}
+.container {
   width: 940px;
 }
 
