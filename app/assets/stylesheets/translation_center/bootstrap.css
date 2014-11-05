@@ -220,7 +220,7 @@ a:hover {
   min-height: 1px;
   margin-left: 20px;
 }
-.navbar-inner .container{
+div.navbar-inner .container{
   width: auto;
   background-color:#008CBA;
 }
