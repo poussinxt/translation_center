@@ -1,5 +1,5 @@
 Routes = {
-  translation_center_category_path: translation_center_root + '/categories/',
+  translation_center_category_path: translation_center_root + 'categories/',
   translation_center_set_lang_to_path: translation_center_root + 'set_language_to/',
   translation_center_set_lang_from_path: translation_center_root + 'set_language_from/',
   translation_center_search_activity_path: translation_center_root + 'search_activity',
