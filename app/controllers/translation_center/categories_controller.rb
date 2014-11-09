@@ -21,7 +21,7 @@ module TranslationCenter
     def show
       @category = Category.find(params[:id])
       session[:current_filter] = params[:filter] || session[:current_filter]
-      @keys = @category.send("#{session[:current_filter]}_keys", session[:lang_to]).offset(@page - 1).limit(TranslationKey::PER_PAGE)
+      @keys = @category.send("#{session[:current_filter]}_keys", session[:lang_to]).offset(TranslationKey::PER_PAGE *(@page - 1)).limit(TranslationKey::PER_PAGE)
       @untranslated_keys_count = @category.untranslated_keys(session[:lang_to]).count
       @translated_keys_count = @category.translated_keys(session[:lang_to]).count
       @pending_keys_count = @category.pending_keys(session[:lang_to]).count
