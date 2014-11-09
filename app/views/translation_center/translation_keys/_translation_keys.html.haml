@@ -3,6 +3,15 @@
     = t('.no_translation_keys')
 - else
   .tabbable.tabs-left.all_listing
+    
+    %ul.nav.nav-tabs.translation_keys_listing
+      - translation_keys.each_with_index do |translation_key, index|
+        = render 'translation_center/translation_keys/show_keys', translation_key: translation_key, index: index
+        
+
+    .tab-content.translations_listing
+      - translation_keys.each_with_index do |translation_key, index|
+        = render 'translation_center/translation_keys/show', translation_key: translation_key, index: index
     .pagination
       - if @page != 1
         = link_to t('pagination.first'), "#{request.protocol}#{request.host_with_port}#{request.fullpath.gsub('&page=' + @page.to_s, '')}?&page=1"
@@ -17,13 +26,4 @@
       = @page
       = t('.of')
       = @total_pages
-    %ul.nav.nav-tabs.translation_keys_listing
-      - translation_keys.each_with_index do |translation_key, index|
-        = render 'translation_center/translation_keys/show_keys', translation_key: translation_key, index: index
-        
-
-    .tab-content.translations_listing
-      - translation_keys.each_with_index do |translation_key, index|
-        = render 'translation_center/translation_keys/show', translation_key: translation_key, index: index
-
 
