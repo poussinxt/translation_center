@@ -20,9 +20,6 @@
         |
       - if @total_pages != 1 && @page != @total_pages
         = link_to t('pagination.next'), "#{request.protocol}#{request.host_with_port}#{request.fullpath.gsub('&page=' + @page.to_s, '')}&page=#{@page + 1}"
-      - if @page != @total_pages
-        |
-        = link_to t('pagination.last'), "#{request.protocol}#{request.host_with_port}#{request.fullpath.gsub('&page=' + @page.to_s, '')}?&page=#{@total_pages}"
       = @page
       = t('.of')
       = @total_pages
