@@ -12,7 +12,7 @@ module TranslationCenter
     # called after key is created or updated
     before_save :add_category
 
-    PER_PAGE = 15
+    PER_PAGE = 10
 
     scope :translated, lambda { |lang| where("#{lang.to_s}_status" => 'translated') }
     scope :pending, lambda { |lang| where("#{lang.to_s}_status" => 'pending') }
